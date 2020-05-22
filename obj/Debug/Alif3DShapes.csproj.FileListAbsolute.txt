@@ -1,0 +1,12 @@
+G:\Kuliah\Project VStudio Kampus\PBO_Sms_2\Alif3DShapes\bin\Debug\Alif3DShapes.exe.config
+G:\Kuliah\Project VStudio Kampus\PBO_Sms_2\Alif3DShapes\bin\Debug\Alif3DShapes.exe
+G:\Kuliah\Project VStudio Kampus\PBO_Sms_2\Alif3DShapes\bin\Debug\Alif3DShapes.pdb
+G:\Kuliah\Project VStudio Kampus\PBO_Sms_2\Alif3DShapes\obj\Debug\Alif3DShapes.csprojAssemblyReference.cache
+G:\Kuliah\Project VStudio Kampus\PBO_Sms_2\Alif3DShapes\obj\Debug\Alif3DShapes.Properties.Resources.resources
+G:\Kuliah\Project VStudio Kampus\PBO_Sms_2\Alif3DShapes\obj\Debug\Alif3DShapes.csproj.GenerateResource.cache
+G:\Kuliah\Project VStudio Kampus\PBO_Sms_2\Alif3DShapes\obj\Debug\Alif3DShapes.csproj.CoreCompileInputs.cache
+G:\Kuliah\Project VStudio Kampus\PBO_Sms_2\Alif3DShapes\obj\Debug\Alif3DShapes.exe
+G:\Kuliah\Project VStudio Kampus\PBO_Sms_2\Alif3DShapes\obj\Debug\Alif3DShapes.pdb
+G:\Kuliah\Project VStudio Kampus\PBO_Sms_2\Alif3DShapes\obj\Debug\Alif3DShapes.FormAdd.resources
+G:\Kuliah\Project VStudio Kampus\PBO_Sms_2\Alif3DShapes\obj\Debug\Alif3DShapes.FormDisplay.resources
+G:\Kuliah\Project VStudio Kampus\PBO_Sms_2\Alif3DShapes\obj\Debug\Alif3DShapes.FormMenu.resources
