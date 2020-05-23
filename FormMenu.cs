@@ -22,7 +22,14 @@ namespace Alif3DShapes
 
         private void FormMenu_Load(object sender, EventArgs e)
         {
+            if (File.Exists("academicADM.dat"))
+            {
+                FileStream fileStream = new FileStream("academicADM.dat", FileMode.Open, FileAccess.Read);
 
+                BinaryFormatter formatter = new BinaryFormatter();
+                listsOfStudent = formatter.Deserialize(fileStream) as List<AlifStudent>;
+                fileStream.Close();
+            }
         }
 
         private void addDataToolStripMenuItem_Click(object sender, EventArgs e)

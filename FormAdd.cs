@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -44,6 +46,7 @@ namespace Alif3DShapes
                     student = new AlifRegularStudent(id, name, address, schoolName, major);
                     listBoxInfo.Items.Add("Student Added");
                     form.listsOfStudent.Add(student);
+                    FocusClear();
                 }
                 else
                 {
@@ -53,12 +56,21 @@ namespace Alif3DShapes
                     student = new AlifTransferStudent(id, name, address, prevSchool, prevMajor, credits);
                     listBoxInfo.Items.Add("Student Added");
                     form.listsOfStudent.Add(student);
+                    FocusClear();
                 }
 
             }catch (Exception error)
             {
                 MessageBox.Show(error.Message,"Warning");
             }
+        }
+
+        private void FocusClear()
+        {
+            textBoxID.Clear();
+            textBoxName.Clear();
+            textBoxAddress.Clear();
+            textBoxID.Focus();
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
@@ -76,6 +88,21 @@ namespace Alif3DShapes
         {
             groupBox1.Enabled = false;
             groupBox2.Enabled = true;
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            List<AlifStudent> students = form.listsOfStudent;
+
+            DialogResult userSelect = MessageBox.Show("Save the Data?", "Confirmation", MessageBoxButtons.YesNo);
+            if (userSelect == DialogResult.Yes)
+            {
+                FileStream fileStream = new FileStream("academicADM.dat", FileMode.Create, FileAccess.Write);
+
+                BinaryFormatter formatter = new BinaryFormatter();
+                formatter.Serialize(fileStream, form.listsOfStudent);
+                fileStream.Close();
+            }
         }
     }
 }
