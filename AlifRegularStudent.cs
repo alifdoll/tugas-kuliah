@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Alif3DShapes
 {
+    [Serializable]
     public class AlifRegularStudent : AlifStudent
     {
        
