@@ -14,7 +14,7 @@ namespace Alif3DShapes
 {
     public partial class FormMenu : Form
     {
-        public List<AlifShape3D> listOfShapes = new List<AlifShape3D>();
+        public List<AlifStudent> listsOfStudent = new List<AlifStudent>();
         public FormMenu()
         {
             InitializeComponent();
@@ -44,40 +44,6 @@ namespace Alif3DShapes
             Close();
         }
 
-        private void saveFileToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            SaveFileDialog saveFile = new SaveFileDialog
-            {
-                InitialDirectory = @"G:\Kuliah\Project VStudio Kampus\PBO_Sms_2\Alif3DShapes",
-                Title = "Save Shape File",
-                Filter = "Shape Data |*.vc"
-            };
-            saveFile.ShowDialog();
-            if(saveFile.FileName != "")
-            {
-                FileStream fileStream = (FileStream)saveFile.OpenFile();
-                BinaryFormatter formatter = new BinaryFormatter();
-
-                formatter.Serialize(fileStream, listOfShapes);
-                fileStream.Close();
-            }
-        }
-
-        private void loadFileToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFile = new OpenFileDialog
-            {
-                InitialDirectory = @"G:\Kuliah\Project VStudio Kampus\PBO_Sms_2\Alif3DShapes",
-                Filter = "Shape Data |*.vc"
-            };
-            openFile.ShowDialog();
-
-            if(openFile.FileName != "")
-            {
-                FileStream fileStream = (FileStream)openFile.OpenFile();
-                BinaryFormatter formatter = new BinaryFormatter();
-                listOfShapes = formatter.Deserialize(fileStream) as List<AlifShape3D>;
-            }
-        }
+      
     }
 }

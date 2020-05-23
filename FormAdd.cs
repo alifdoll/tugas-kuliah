@@ -13,7 +13,7 @@ namespace Alif3DShapes
     public partial class FormAdd : Form
     {
         FormMenu form;
-        AlifShape3D shapes;
+       
         public FormAdd()
         {
             InitializeComponent();
@@ -22,87 +22,60 @@ namespace Alif3DShapes
         private void Form1_Load(object sender, EventArgs e)
         {
             form = (FormMenu)Owner;
-            radioButtonSphere.Checked = true;
+            radioButton1.Checked = true;
         }
 
 
-        private void radioButtonSphere_CheckedChanged(object sender, EventArgs e)
-        {
-            groupBoxSphere.Enabled = true;
-            groupBoxCuboid.Enabled = false;
-            groupBoxCylinder.Enabled = false;
-        }
-
-        private void radioButtonCuboid_CheckedChanged(object sender, EventArgs e)
-        {
-            groupBoxSphere.Enabled = false;
-            groupBoxCuboid.Enabled = true;
-            groupBoxCylinder.Enabled = false;
-        }
-
-        private void radioButtonCylinder_CheckedChanged(object sender, EventArgs e)
-        {
-            groupBoxSphere.Enabled = false;
-            groupBoxCuboid.Enabled = false;
-            groupBoxCylinder.Enabled = true;
-        }
+      
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            int x = (int)numericUpDownX.Value;
-            int y = (int)numericUpDownY.Value;
-            int z = (int)numericUpDownZ.Value;
-
             try
             {
-                if (radioButtonSphere.Checked)
+                string id = textBoxID.Text;
+                string name = textBoxName.Text;
+                string address = textBoxAddress.Text;
+                AlifStudent student;
+
+                if (radioButton1.Checked)
                 {
-                    int diameter = (int)numericUpDownDiamet.Value;
-                    shapes = new AlifSphere(x, y, z, diameter);
-
-                    form.listOfShapes.Add(shapes);
-                    numericUpDownDiamet.Value = 0;
-                }
-                else if (radioButtonCuboid.Checked)
-                {
-                    int width = (int)numericUpDownWidth.Value;
-                    int height = (int)numericUpDownHeight.Value;
-                    int length = (int)numericUpDownLength.Value;
-
-                    shapes = new AlifCuboid(x, y, z, width, height, length);
-
-                    form.listOfShapes.Add(shapes);
-
-                    numericUpDownWidth.Value = 0;
-                    numericUpDownHeight.Value = 0;
-                    numericUpDownLength.Value = 0;
+                    string schoolName = textBoxSchoolName.Text;
+                    string major = comboBoxMajor.SelectedItem.ToString();
+                    student = new AlifRegularStudent(id, name, address, schoolName, major);
+                    listBoxInfo.Items.Add("Student Added");
+                    form.listsOfStudent.Add(student);
                 }
                 else
                 {
-                    int height = (int)numericUpDownHeightCy.Value;
-                    int diameter = (int)numericUpDownDiamCylin.Value;
-                    shapes = new AlifCylinder(x, y, z, diameter, height);
-
-                    form.listOfShapes.Add(shapes);
-
-                    numericUpDownHeightCy.Value = 0;
-                    numericUpDownDiamCylin.Value = 0;
+                    string prevSchool = textBoxPrevName.Text;
+                    string prevMajor = textBoxPrevMajor.Text;
+                    int credits = int.Parse(textBoxCreds.Text);
+                    student = new AlifTransferStudent(id, name, address, prevSchool, prevMajor, credits);
+                    listBoxInfo.Items.Add("Student Added");
+                    form.listsOfStudent.Add(student);
                 }
 
-                numericUpDownX.Value = 0;
-                numericUpDownY.Value = 0;
-                numericUpDownZ.Value = 0;
-                listBoxInfo.Items.Add("Data Saved");
-                MessageBox.Show("Data Saved");
-            }catch(Exception error)
+            }catch (Exception error)
             {
-                MessageBox.Show(error.Message);
+                MessageBox.Show(error.Message,"Warning");
             }
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            groupBox1.Enabled = true;
+            groupBox2.Enabled = false;
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            groupBox1.Enabled = false;
+            groupBox2.Enabled = true;
         }
     }
 }

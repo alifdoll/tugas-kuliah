@@ -46,7 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlifRegularStudent.cs" />
     <Compile Include="AlifStudent.cs" />
+    <Compile Include="AlifTransferStudent.cs" />
     <Compile Include="FormAdd.cs">
       <SubType>Form</SubType>
     </Compile>
