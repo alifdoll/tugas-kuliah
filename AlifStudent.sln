@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alif3DShapes", "Alif3DShapes.csproj", "{AB970079-8BDC-403B-8F14-38F68251E9B0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlifStudent", "AlifStudent.csproj", "{AB970079-8BDC-403B-8F14-38F68251E9B0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

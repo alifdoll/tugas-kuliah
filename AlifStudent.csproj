@@ -46,10 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AlifCuboid.cs" />
-    <Compile Include="AlifCylinder.cs" />
-    <Compile Include="AlifShape3D.cs" />
-    <Compile Include="AlifSphere.cs" />
+    <Compile Include="AlifStudent.cs" />
     <Compile Include="FormAdd.cs">
       <SubType>Form</SubType>
     </Compile>
