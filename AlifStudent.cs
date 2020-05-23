@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace Alif3DShapes
 {
-    public class AlifStudent
+    public abstract class AlifStudent
     {
+        private string id;
+        private string name;
+        private string address;
+
+        public string Id { get => id; set => id = value; }
+        public string Name { get => name; set => name = value; }
+        public string Address { get => address; set => address = value; }
+
+        public abstract string DisplayData();
     }
 }
